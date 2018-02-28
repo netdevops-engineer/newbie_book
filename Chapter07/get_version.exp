@@ -1,0 +1,18 @@
+#! /usr/bin/expect –f                   
+set host [lindex $argv 0]
+set port [lindex $argv 1]
+set timeout 10
+spawn telnet $host $port
+send "\r"
+expect "Username*"
+send "admin\r"
+expect "Password*"
+send "admin\r"
+expect "RP/0/0/CPU0*"
+send "terminal length 0\r"
+expect "RP/0/0/CPU0*"
+send "show platform\r"
+expect "RP/0/0/CPU0*"
+send "exit\r"
+sleep 1
+

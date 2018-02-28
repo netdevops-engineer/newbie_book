@@ -1,0 +1,7 @@
+Value network1 ((\d+\.\d+\.\d+\.\d+\/\d+)|(\d+\.\d+\.\d+\.\d+\b))
+#Value network2 
+
+Start
+  ^\s+Network\s+Next Hop\s+Metric
+  ^[\*|>]{0,2}\s+${network1}\s+\d+\.\d+\.\d+\.\d+\s -> Record
+  #^[\*|>]{0,2}\s+${network2} -> record

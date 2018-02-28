@@ -1,0 +1,10 @@
+Value MainRelease (\d+\.\d)
+Value ReleaseType (\w)
+Value MinorRelease (\d+)
+Value Respin (\w?\d+)
+
+Start
+  ^${MainRelease}${ReleaseType}${MinorRelease}[\.|\-]${Respin} -> Record
+
+EOF
+

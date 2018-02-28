@@ -1,0 +1,36 @@
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 8 subnets, 2 masks
+O        10.0.0.4/30 [110/41] via 10.0.0.14, 1w1d, GigabitEthernet0/2
+O        10.0.0.8/30 [110/42] via 10.0.0.18, 1w1d, GigabitEthernet0/3
+                     [110/42] via 10.0.0.14, 1w1d, GigabitEthernet0/2
+C        10.0.0.12/30 is directly connected, GigabitEthernet0/2
+L        10.0.0.13/32 is directly connected, GigabitEthernet0/2
+C        10.0.0.16/30 is directly connected, GigabitEthernet0/3
+L        10.0.0.17/32 is directly connected, GigabitEthernet0/3
+O        10.0.0.20/30 [110/41] via 10.0.0.18, 1w1d, GigabitEthernet0/3
+O        10.0.0.24/30 [110/41] via 10.0.0.18, 1w2d, GigabitEthernet0/3
+                      [110/41] via 10.0.0.14, 1w1d, GigabitEthernet0/2
+      172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks
+C        172.16.1.0/24 is directly connected, GigabitEthernet0/0
+L        172.16.1.68/32 is directly connected, GigabitEthernet0/0
+      192.168.0.0/32 is subnetted, 5 subnets
+O        192.168.0.1 [110/2] via 10.0.0.14, 1w1d, GigabitEthernet0/2
+O        192.168.0.2 [110/42] via 10.0.0.18, 1w1d, GigabitEthernet0/3
+                     [110/42] via 10.0.0.14, 1w1d, GigabitEthernet0/2
+C        192.168.0.4 is directly connected, Loopback0
+O        192.168.0.5 [110/2] via 10.0.0.18, 1w2d, GigabitEthernet0/3
+C        192.168.0.200 is directly connected, Loopback1
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, Loopback1
+L        192.168.1.200/32 is directly connected, Loopback1

@@ -1,0 +1,72 @@
+# Well-Known communtites
+# no-export    -  65535:65281  # do not advertise to any eBGP peers
+# no-advertise -  65535:65282  # do not advertise to any BGP peer
+# local-as     -  65535:65283  # do not advertise this route to peers outside the local as
+
+ process rest_api {
+     run ./rest_api.py;
+     encoder json;
+ }
+
+template {
+    neighbor ibgp {
+        router-id 10.0.3.2;
+        local-address 10.0.3.2;
+        local-as 4000;
+        peer-as  4000;
+        hold-time 180;
+        
+        api {
+            processes [ rest_api ];
+            neighbor-changes;
+            receive {
+                parsed;
+                update;
+            }
+            send {
+            packets;
+            }
+        }
+
+
+        static {
+            route 1.0.0.0/8  next-hop 10.0.3.2 community 65535:65282;
+        }
+    }
+}
+
+neighbor 10.0.0.1 {
+     inherit ibgp;
+     description "to BJ BGP peer";
+}
+
+neighbor 10.0.0.2 {
+     inherit ibgp;
+     description "to SH BGP peer";
+}
+
+neighbor 10.0.0.3 {
+     inherit ibgp;
+     description "to GZ BGP peer";
+}
+
+neighbor 10.0.0.4 {
+     inherit ibgp;
+     description "to HZ BGP peer";
+}
+
+neighbor 10.0.0.5 {
+     inherit ibgp;
+     description "to NJ BGP peer";
+}
+
+neighbor 10.0.0.6 {
+     inherit ibgp;
+     description "to WH BGP peer";
+}
+
+neighbor 10.0.0.7 {
+     inherit ibgp;
+     description "to XA BGP peer";
+}
+

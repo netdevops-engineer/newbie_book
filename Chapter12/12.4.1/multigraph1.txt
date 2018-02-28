@@ -1,0 +1,4 @@
+ graph site_c {
+      core1 -- core2 [label="10GE*8",color="red",fontsize=9.0];
+      core1 -- core2 [label="100GE*2",color="blue",fontsize=9.0];
+}

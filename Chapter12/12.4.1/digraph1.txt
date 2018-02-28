@@ -1,0 +1,8 @@
+digraph site_b {
+     core1 [shape=box];
+     core2 [shape=box];
+     access1;
+     access2;
+     access1 -> core1 -> core2 -> access2;
+     
+}

@@ -1,0 +1,5 @@
+graph site_a {
+     core -- access1;
+     core -- access2;
+     
+}

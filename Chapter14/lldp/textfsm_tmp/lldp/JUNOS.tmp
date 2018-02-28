@@ -1,0 +1,10 @@
+Value device_id (\S+)
+Value local_intf (\w+\-[\/|\d]{5})
+Value remote_intf (\S+)
+
+Start
+  ^Local Interface    Parent Interface    Chassis Id          Port info          System Name
+  ^${local_intf}\s+\S+\s+\S+\s+${remote_intf}\s+${device_id} -> Record
+
+EOF
+

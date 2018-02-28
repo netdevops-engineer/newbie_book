@@ -1,0 +1,10 @@
+Value device_id (\S+)
+Value local_intf (\w+[\/|\d]{7})
+Value remote_intf (\S+)
+
+Start
+  ^Device ID       Local Intf          Hold-time  Capability     Port ID
+  ^${device_id}\s+${local_intf}\s+\d+\s+\S+\s+${remote_intf} -> Record
+
+EOF
+

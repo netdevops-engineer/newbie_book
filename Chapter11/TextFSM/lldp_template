@@ -1,0 +1,11 @@
+Value LocalHost (\S+)
+Value LocalPort (\S+)
+Value RemotePort (\S+)
+Value RemoteHost (R\S+)
+Value DeviceType ([R|B|T|C|W|P|S|O])
+
+Start
+  ^${LocalHost}[#|>]show lldp
+  ^${RemoteHost}\s+${LocalPort}\s+\d+\s+${DeviceType}\s+${RemotePort} -> Record
+
+EOF

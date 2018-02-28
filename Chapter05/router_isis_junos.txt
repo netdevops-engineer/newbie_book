@@ -1,0 +1,12 @@
+set interfaces ge-1/2/0 unit 0 description to-R1
+set interfaces ge-1/2/0 unit 0 family inet address 10.0.0.2/30
+set interfaces ge-1/2/0 unit 0 family iso
+set interfaces ge-1/2/1 unit 0 description to-R2
+set interfaces ge-1/2/1 unit 0 family inet address 10.0.1.2/30
+set interfaces ge-1/2/2 unit 0 description to-R3
+set interfaces ge-1/2/2 unit 0 family inet address 10.0.2.2/30
+set interfaces lo0 unit 0 family inet address 192.168.0.2/32
+set interfaces lo0 unit 0 family iso address 49.0001.0192.0168.0002.00
+set protocols isis interface ge-1/2/0.0
+set protocols isis interface ge-1/2/2.0
+set protocols isis interface lo0.0

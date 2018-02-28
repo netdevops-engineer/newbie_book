@@ -1,0 +1,15 @@
+Value InterfaceName (\S+)
+Value IPAddress (\d+\.\d+\.\d+\.\d+)
+Value Netmask (\d+\.\d+\.\d+\.\d+)
+Value Shutdown (shutdown)
+
+Start
+  ^interface ${InterfaceName}
+  ^\s+ip address ${IPAddress} ${Netmask} -> Shut
+
+Shut
+#  ^\! -> Start
+  ^\s+${Shutdown} -> Record
+  ^\! -> Next.NoRecord Start
+
+EOF
