@@ -1,7 +1,7 @@
 #!/usr/bin/python
 ip_list = ["10.1.1.1", "10.1.1.2", "10.1.1.3", "10.1.1.4"]
 
-IP = raw_input("Please input ip address: ")
+IP = input("Please input ip address: ")
 
 for ip in ip_list:
     if ip == IP:
